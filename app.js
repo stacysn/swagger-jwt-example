@@ -5,6 +5,10 @@ var swaggerTools = require("swagger-tools");
 var YAML = require("yamljs");
 var auth = require("./api/helpers/auth");
 var swaggerConfig = YAML.load("./api/swagger/swagger.yaml");
+var mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/");
+
+var db = require("./models"); 
 
 swaggerTools.initializeMiddleware(swaggerConfig, function(middleware) {
   //Serves the Swagger UI on /docs
