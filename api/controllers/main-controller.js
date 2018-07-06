@@ -1,10 +1,17 @@
 var auth = require("../helpers/auth");
+var mongoose = require("../../models");
 
 exports.unprotectedGet = function(args, res, next) {
-  var response = { message: "My resource!" };
+  var response = { message: "Helloooo from SunLink!!" };
   res.writeHead(200, { "Content-Type": "application/json" });
   return res.end(JSON.stringify(response));
 };
+
+exports.stacy = function(args, res, next){
+  var response = {message: "Stacy says hellooo"};
+  res.writeHead(200, {"Content-Type": "application/json"});
+  return res.end(JSON.stringify(response));
+}
 
 exports.protectedGet = function(args, res, next) {
   var response = { message: "My protected resource for admins and users!" };

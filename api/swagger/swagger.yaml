@@ -67,6 +67,17 @@ paths:
           schema:
             $ref: "#/definitions/Resource"
 
+  /stacy: 
+    x-swagger-router-controller: main-controller
+    get: 
+      operationId: stacy
+      description: "Joe's cool method"
+      responses: 
+        "200": 
+          description: "Success"
+          schema: 
+            $ref: "#/definitions/Resource"
+
   /protected:
     x-swagger-router-controller: main-controller
     get:
